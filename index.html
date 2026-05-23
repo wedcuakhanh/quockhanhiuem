@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xin Lỗi Em 💖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow:hidden;
+    height:100vh;
+
+    font-family:'Be Vietnam Pro',sans-serif;
+
+    background:
+    radial-gradient(circle at center,
+    #ff5ca8 0%,
+    #220018 35%,
+    #000 100%);
+
+    position:relative;
+}
+
+/* STARS */
+
+.stars{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* ROTATE RING */
+
+.ring{
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    animation:
+    rotate 20s linear infinite;
+}
+
+.ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:35px;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(255,255,255,.05);
+}
+
+@keyframes rotate{
+
+    from{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+    }
+
+    to{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(360deg);
+    }
+}
+
+/* HEART */
+
+.heart-wrapper{
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:420px;
+    height:420px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:20;
+}
+
+/* GLOW */
+
+.heart-glow{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,79,163,.45),
+    rgba(255,79,163,.1),
+    transparent
+    );
+
+    animation:pulse 2s infinite;
+}
+
+/* HEART SHAPE */
+
+.heart-shape{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:220px;
+    height:220px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ff4fa3,
+    #ff85c2
+    );
+
+    transform:
+    translate(-50%,-50%)
+    rotate(-45deg);
+
+    box-shadow:
+    0 0 40px #ff4fa3,
+    0 0 120px rgba(255,79,163,.8);
+
+    animation:beat 1.5s infinite;
+}
+
+.heart-shape::before,
+.heart-shape::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ff4fa3,
+    #ff85c2
+    );
+}
+
+.heart-shape::before{
+
+    top:-110px;
+    left:0;
+}
+
+.heart-shape::after{
+
+    left:110px;
+    top:0;
+}
+
+/* MAIN IMAGE */
+
+.main-photo{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    z-index:30;
+
+    border:
+    5px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.4),
+    0 0 100px hotpink;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+/* TEXT */
+
+.center-text{
+
+    position:absolute;
+
+    left:50%;
+    top:75%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    z-index:50;
+
+    color:white;
+}
+
+.center-text h1{
+
+    font-size:85px;
+
+    font-family:'Dancing Script',cursive;
+
+    text-shadow:
+    0 0 20px white,
+    0 0 40px hotpink;
+}
+
+.center-text p{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+    color:#ffd7eb;
+
+    line-height:2rem;
+
+    letter-spacing:1px;
+}
+
+/* FLOATING WORD */
+
+.floating-word{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    opacity:.85;
+
+    white-space:nowrap;
+
+    text-shadow:
+    0 0 10px #ff7ac6,
+    0 0 20px #ff4fa3;
+
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:
+        translateY(100vh)
+        scale(.5);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        scale(1.2);
+
+        opacity:0;
+    }
+}
+
+/* FLOATING IMAGE */
+
+.floating-image{
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    border-radius:25px;
+
+    object-fit:cover;
+
+    opacity:.85;
+
+    animation:imageFly linear infinite;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.4),
+    0 0 40px rgba(255,105,180,.5);
+
+    border:
+    3px solid rgba(255,255,255,.2);
+}
+
+@keyframes imageFly{
+
+    0%{
+
+        transform:
+        translateY(100vh)
+        rotate(0deg)
+        scale(.6);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg)
+        scale(1.1);
+
+        opacity:0;
+    }
+}
+
+/* PARTICLE */
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.8);
+
+    animation:particle linear infinite;
+}
+
+@keyframes particle{
+
+    from{
+
+        transform:
+        translateY(0);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+        translateY(-120vh);
+
+        opacity:0;
+    }
+}
+
+/* ANIMATION */
+
+@keyframes beat{
+
+    0%{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(-45deg)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(-45deg)
+        scale(1.08);
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(-45deg)
+        scale(1);
+    }
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:
+        translate(-50%,-50%)
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,-50%)
+        translateY(-12px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .ring{
+
+        width:320px;
+        height:320px;
+    }
+
+    .ring::before{
+
+        inset:22px;
+    }
+
+    .heart-wrapper{
+
+        width:260px;
+        height:260px;
+
+        top:42%;
+    }
+
+    .heart-shape{
+
+        width:145px;
+        height:145px;
+    }
+
+    .heart-shape::before,
+    .heart-shape::after{
+
+        width:145px;
+        height:145px;
+    }
+
+    .heart-shape::before{
+
+        top:-72px;
+    }
+
+    .heart-shape::after{
+
+        left:72px;
+    }
+
+    .main-photo{
+
+        width:165px;
+        height:165px;
+    }
+
+    .center-text{
+
+        top:68%;
+    }
+
+    .center-text h1{
+
+        font-size:48px;
+    }
+
+    .center-text p{
+
+        font-size:15px;
+        line-height:1.6rem;
+    }
+
+    .floating-word{
+
+        font-size:17px;
+    }
+
+    .floating-image{
+
+        width:75px;
+        height:75px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:420px){
+
+    .ring{
+
+        width:270px;
+        height:270px;
+    }
+
+    .heart-wrapper{
+
+        width:220px;
+        height:220px;
+
+        top:40%;
+    }
+
+    .heart-shape{
+
+        width:120px;
+        height:120px;
+    }
+
+    .heart-shape::before,
+    .heart-shape::after{
+
+        width:120px;
+        height:120px;
+    }
+
+    .heart-shape::before{
+
+        top:-60px;
+    }
+
+    .heart-shape::after{
+
+        left:60px;
+    }
+
+    .main-photo{
+
+        width:140px;
+        height:140px;
+    }
+
+    .center-text{
+
+        top:65%;
+    }
+
+    .center-text h1{
+
+        font-size:40px;
+    }
+
+    .center-text p{
+
+        font-size:14px;
+        line-height:1.5rem;
+    }
+
+    .floating-word{
+
+        font-size:15px;
+    }
+
+    .floating-image{
+
+        width:65px;
+        height:65px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- STARS -->
+
+<div class="stars" id="stars"></div>
+
+<!-- RING -->
+
+<div class="ring"></div>
+
+<!-- HEART -->
+
+<div class="heart-wrapper">
+
+    <div class="heart-glow"></div>
+
+    <div class="heart-shape"></div>
+
+    <!-- THAY ẢNH CỦA BẠN -->
+    <img src="/chhh.jpg" class="main-photo">
+
+</div>
+
+<!-- TEXT -->
+
+<div class="center-text">
+
+    <h1>Xin Lỗi Em</h1>
+
+    <p>
+        Anh thật lòng xin lỗi... 💖 <br>
+        Anh chỉ muốn thấy em cười thôi 🥺
+    </p>
+
+</div>
+
+<script>
+
+/* STARS */
+
+const stars =
+document.getElementById("stars");
+
+for(let i=0;i<180;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left =
+    Math.random()*100 + "%";
+
+    star.style.top =
+    Math.random()*100 + "%";
+
+    star.style.animationDuration =
+    Math.random()*3 + 2 + "s";
+
+    stars.appendChild(star);
+}
+
+/* FLOATING WORDS */
+
+const texts = [
+
+"Xin lỗi em...",
+"Anh nhớ em 💖",
+"Anh sai rồi...",
+"Đừng giận anh nữa 🥺",
+"Tha lỗi cho anh nha",
+"Anh thật lòng xin lỗi...",
+"Em là điều đặc biệt nhất",
+"Anh không muốn mất em",
+"Anh thương em nhiều lắm",
+"Cho anh cơ hội nha 💕",
+"Xin lỗi vì đã làm em buồn...",
+"Anh chỉ muốn thấy em cười 🌸"
+
+];
+
+function createText(){
+
+    const text =
+    document.createElement("div");
+
+    text.classList.add("floating-word");
+
+    text.innerHTML =
+    texts[Math.floor(Math.random()*texts.length)];
+
+    text.style.left =
+    Math.random()*100 + "vw";
+
+    text.style.animationDuration =
+    Math.random()*10 + 10 + "s";
+
+    document.body.appendChild(text);
+
+    setTimeout(()=>{
+        text.remove();
+    },20000);
+}
+
+setInterval(createText,600);
+
+/* PARTICLE */
+
+function createParticle(){
+
+    const p =
+    document.createElement("div");
+
+    p.classList.add("particle");
+
+    const size =
+    Math.random()*4 + 2;
+
+    p.style.width =
+    size + "px";
+
+    p.style.height =
+    size + "px";
+
+    p.style.left =
+    Math.random()*100 + "vw";
+
+    p.style.bottom = "-10px";
+
+    p.style.animationDuration =
+    Math.random()*5 + 5 + "s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+        p.remove();
+    },10000);
+}
+
+setInterval(createParticle,120);
+
+/* FLOATING IMAGE */
+
+const images = [
+
+"/chan.jpg",
+"/chan1.jpg",
+"/chan2.jpg",
+"/chan3.jpg"
+
+];
+
+function createImage(){
+
+    const img =
+    document.createElement("img");
+
+    img.classList.add("floating-image");
+
+    img.src =
+    images[Math.floor(Math.random()*images.length)];
+
+    img.style.left =
+    Math.random()*100 + "vw";
+
+    img.style.animationDuration =
+    Math.random()*12 + 10 + "s";
+
+    document.body.appendChild(img);
+
+    setTimeout(()=>{
+        img.remove();
+    },22000);
+}
+
+setInterval(createImage,1500);
+
+</script>
+
+</body>
+</html>
